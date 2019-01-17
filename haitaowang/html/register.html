@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/public.css" />
+		<style type="text/css">
+			* {
+				margin: 0 auto;
+			}
+			
+			li {
+				list-style-type: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.header_top {
+				height: 32px;
+				background: #333;
+			}
+			
+			.header_container {
+				width: 1128px;
+				height: 32px;
+				margin: 0 auto;
+			}
+			
+			.header_left li {
+				float: left;
+			}
+			.fa-clock-o{
+				color: #ccc;
+				padding-right: 4px;
+				margin-left: 20px;
+			}
+			
+			.header_container li a {
+				font: 14px/32px Arial, 'Times New Roman', 'Microsoft YaHei', SimHei;
+				color: #ccc;
+			}
+			/*_____________________________________________________________-*/
+			.drop{
+				position: relative;
+			}
+			.drop_time{
+				display: none;
+				position: absolute;
+				top:32px;
+				right:-129px;
+			}
+			.drop_time li{
+				width: 203px;
+				height: 50px;
+				border: 1px solid #dcdcdc;
+				border-top: none;
+				background: #FFFFFF;
+				color: #666;
+			}
+			.drop_time li:hover{
+				color: #BF002A;
+			}
+			/*-------------------------------------------------------------------------*/				
+			.header_right {
+				float: right;
+			}
+			
+			.header_right li {
+				float: left;
+			}
+			
+			.c_trans {
+				position: relative;
+			}
+			
+			._trans {
+				display: none;
+				position: absolute;
+				top: 32px;
+				left: -55px;
+				text-align: center;
+			}
+			
+			._trans li {
+				width: 120px;
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #dcdcdc;
+				border-top: none;
+				background: #FFF;
+			}
+			._trans li:hover a{
+				color: #BF002A; 
+			}
+			._trans li:hover span{
+				color: #BF002A; 
+			}
+			._trans li span{
+				color: #666;
+			}
+			._trans li a{
+				color: #666;
+			}
+			
+			
+			.header_line {
+				margin: 0 10px;
+			}
+			
+			.header_triangle {
+				display: inline-block;
+				width: 0px;
+				margin-left: 2px;
+				margin-right: 20px;
+				border: 4px solid transparent;
+				border-top-color: #ccc;
+			}
+			.text-center {
+				height: 100px;
+				text-align: center;
+				background: #0c86ba;
+			}
+			
+			.text-center img {
+				vertical-align: middle;
+			}
+/*	/*	/*	/*
+			.container {
+				width: 1148px;
+				height: 60px;
+				margin: 20px auto;
+				display: flex;
+			}
+			
+			.container_left {
+				width: 245px;
+			}
+			
+			.container_center {
+				width: 576px;
+			}
+			
+			.container_center input {
+				width: 460px;
+				height: 40px;
+			}
+			
+			.container_center button {
+				width: 79px;
+				height: 40px;
+				background: #de3c5b;
+			}
+			
+			.container_center li {
+				float: left;
+				font-size: 12px;
+				color: #888;
+			}
+			
+			.container_center li span {
+				margin: 0 5px;
+			}
+			
+			.container_center a {
+				color: #888;
+			}
+			
+			.container_right span {
+				margin-left: 100px;
+			}*/
+			.nav {
+				background: #de3c5b;
+			}
+			
+			.nav_con {
+				overflow: hidden;
+				width: 1128px;
+				margin: 0 auto;
+			
+			}
+			.nav_con a{
+				display: block;
+				height: 40px;
+				line-height: 40px;
+				font-size: 14px;
+				color: #fff;
+			}
+			.nav_left{
+				float: left;
+				
+			}
+			.nav_left li {
+				float: left;
+				padding: 0 19px;
+				border-right:2px solid #de3c5b;
+			}
+			
+			.nav_con li:hover {
+				background: #bf002a;
+			}
+			
+			.nav_left li:last-child {
+				position: relative;
+			}
+			
+			.nav_left li:last-child img {
+				position: absolute;
+				top: 3px;
+				right: -12px;
+			}
+			
+			.nav_right {
+				float: right;
+
+			}
+			.nav_right li{
+				padding: 0 19px;
+			}
+			
+			.main_bg {
+				background: #eee;
+				padding-top: 22px;
+				padding-bottom: 30px;
+			}
+			
+			.main {
+				width: 448px;
+				height: 840px;
+				background: #FFFFFF;
+			}
+			
+			.main_img img {
+				width: 418px;
+				margin: 16px 16px 11px 16px;
+			}
+			
+			.main_in {
+				width: 418px;
+				height: 34px;
+				margin-bottom: 17px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			
+			.main_in div {
+				width: 81px;
+				height: 34px;
+				display: inline-block;
+				float: left;
+				background: #eee;
+				text-align: center;
+				line-height: 34px;
+				border-bottom-left-radius: 4px;
+				border-top-left-radius: 4px;
+			}
+			
+			.main_in input {
+				float: left;
+				width: 327px;
+				height: 32px;
+				border: none;
+				padding-left: 10px;
+				border-bottom-right-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+			
+			.ver_code {
+				width: 426px;
+				height: 104px;
+			}
+			
+			.ver_code1 {
+				width: 215px;
+				height: 70px;
+				background: #E7E1CD;
+				margin-left: 0;
+			}
+			
+			.ver_code2 {
+				border: 1px solid #CCCCCC;
+				width: 203px;
+				height: 34px;
+				margin-left: 5px;
+				border-radius: 4px;
+			}
+			
+			.ver_code input {
+				width: 203px;
+				line-height: 32px;
+				border: none;
+				border-radius: 4px;
+			}
+			
+			.main_sub {
+				width: 418px;
+				height: 34px;
+				margin: 21px auto;
+				border-radius: 4px;
+				background: #337ab7;
+				border-color: #2e6da4;
+			}
+			
+			.main_sub:hover {
+				background: #3a0fd9;
+			}
+			
+			.main_btn {
+				width: 418px;
+				height: 34px;
+				border: none;
+				border-radius: 4px;
+				background: rgba(225, 225, 225, 0);
+				color: #fff;
+			}
+			
+			.sub_p a {
+				height: 34px;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				font-size: 14px;
+				line-height: 34px;
+				text-align: center;
+				color: #333;
+			}
+			
+			.sub_sub {
+				width: 54px;
+				margin-left: 156px;
+			}
+			
+			.sub_for {
+				width: 84px;
+			}
+			
+			.sub_con {
+				font-size: 14px;
+				margin: 18px 14px 0;
+				padding-bottom: 18px;
+				color: #777;
+				border-bottom: 1px solid #eee;
+			}
+			
+			.sub_con a {
+				color: #338abd;
+			}
+			
+			.sub_meth {
+				display: flex;
+				justify-content: space-around;
+				padding: 34px 21px 0;
+			}
+			
+			.sub_meth p {
+				margin: 4px 0 25px;
+				font-size: 12px;
+				text-align: center;
+				color: #777;
+			}
+			
+			.footer {
+				height: 121px;
+				background: #333;
+			}
+			
+			.footer_con {
+				width: 454px;
+				padding-top: 30px;
+				font-size: 14px;
+				color: #fff;
+				line-height: 33px;
+			}
+			
+			.footer_con ul li {
+				float: left;
+				margin-right: 13px;
+			}
+			
+			.footer_con ul li:first-child {
+				margin-left: 20px;
+			}
+			
+			.footer_con a {
+				color: #fff;
+			}
+			
+			.footer_con p {
+				float: left;
+			}
+			
+			.footer_con p img:first-child {
+				width: 20px;
+				margin: 0 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="top" class="header_top">
+			<div class="header_container">
+				<ul class="header_left">
+					<li>
+						<a href="#">海淘首页</a><span class="header_line">|</span></li>
+					<li>
+						<a href="#">关于我们</a>
+					</li>
+					<li class="drop">
+						<span class="fa fa-clock-o"></span><a href="#">世界时间</a>
+						<ul class="drop_time">
+							<li>444</li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="header_right">
+					<li class="c_trans">
+						<a href="">我的转运</a><span class="header_triangle"></span>
+						<ul class="_trans">
+							<li>
+								<a href=""><span class="fa fa-fw fa-bank"></span>转运仓库</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-bullhorn"></span>到货预报</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-cube"></span>包裹管理</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-paper-plane"></span>转运订单</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-podcast"></span>包裹认领</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">我的团购</a><span class="header_line">|</span></li>
+					<li class="c_trans">
+						<a href="">我的赚钱</a><span class="header_triangle"></span>
+						<ul class="_trans">
+							<li>
+								<a href=""><span class="fa fa-fw fa-money"></span>海淘红包</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-money"></span>返利打赏</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-gift"></span>转运红包</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-users"></span>我的邀请</a>
+							</li>
+						</ul>
+					</li>
+					<li class="c_trans">
+						<a href="">我的分享</a><span class="header_triangle"></span>
+						<ul class="_trans">
+							<li>
+								<a href=""><span class="fa fa-fw fa-book"></span>我的分享</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-edit"></span>写分享</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-fw fa-star"></span>我的收藏</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">注册</a><span class="header_line">|</span></li>
+					<li class="c_trans">
+						<a href="">登录</a><span class="header_triangle"></span>
+						<ul class="_trans">
+							<li>
+								<a href=""><span class="fa fa-user  fa-fw"></span>会员登录</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-weixin fa-fw"></span>微信登录</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-weibo fa-fw"></span>微博登录</a>
+							</li>
+							<li>
+								<a href=""><span class="fa fa-qq fa-fw"></span>QQ登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="text-center">
+			<a href="#"><img src="../img/text-center.png" /></a>
+		</div>
+		
+<!--_________________________________________________________________________________________________-->		
+		
+			<div class="lead">
+				<div class="lead_left">
+					<a href=""><img src="../img/logo.png" /></a>
+				</div>
+				<div class="lead_center">
+						<span class="lead_s"><input type="text" placeholder="搜索全球值得买、攻略笔记、超值团购" style="padding-left:6px;"/></span>
+						<span class="lead_t"><input type="button" /><i class="fa fa-search"></i></span>
+					<ul>
+						<li>热搜：</li>
+						<li>
+							<a href="">黑色星期五</a><span>|</span></li>
+						<li>
+							<a href="">双十一</a><span>|</span></li>
+						<li>
+							<a href="">幼儿奶粉</a><span>|</span></li>
+						<li>
+							<a href="">值得买</a><span>|</span></li>
+						<li>
+							<a href="">没意思</a><span>|</span></li>
+						<li>
+							<a href="">雅诗兰黛</a><span>|</span></li>
+						<li>
+							<a href="">海蓝之谜</a><span>|</span></li>
+						<li>
+							<a href="">costco</a>
+						</li>
+					</ul>
+				</div>
+				<div class="lead_right">
+					<a href=""><span class="fa fa-cart-plus fa-lg"></span>购物车</a>
+				</div>
+			</div>
+		<!--_________________________________________________________________________________-->
+		<div class="nav">
+			<div class="nav_con">
+				<ul class="nav_left">
+					<li>
+						<a href=""><span class="fa fa-home" style="padding-right: 4px;"></span>首页</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-tags" style="padding-right: 4px;"></span>值得买</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-globe" style="padding-right: 4px;"></span>返利</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-paper-plane" style="padding-right: 4px;"></span>转运</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-flag" style="padding-right: 4px;"></span>团购</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-leaf" style="padding-right: 4px;"></span>海淘超市</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-flask" style="padding-right: 4px;"></span>种草机</a>
+					</li>
+					<li>
+						<a href=""><span class="fa fa-chrome" style="padding-right: 4px;"></span>海淘盒子</a>
+					</li>
+					<li>
+						<a href="">APP</a><img src="../img/hot.png" /></li>
+				</ul>
+				<ul class="nav_right">
+					<li>
+						<a href=""><span class="fa fa-user-circle" style="padding-right: 4px;"></span>我的海淘</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main_bg">
+			<div class="main">
+				<div class="main_img">
+					<a href=""><img src="../img/pic1.jpg" /></a>
+				</div>
+				<div class="main_in">
+					<div>会员名称</div>
+					<input type="text" placeholder="会员名" />
+				</div>
+				<div class="main_in">
+					<div>登录密码</div>
+					<input type="password" placeholder="密码" />
+				</div>
+				<div class="main_in">
+					<div>确认密码</div>
+					<input type="password" placeholder="密码" />
+				</div>
+				<div class="main_in">
+					<div>电子邮箱</div>
+					<input type="email" placeholder="E-mail邮箱" />
+				</div>
+				<div class="ver_code">
+					<div class="ver_code1">
+					</div>
+					<div class="ver_code2">
+						<input type="text" placeholder="验证码" />
+					</div>
+				</div>
+				<div class="main_sub">
+					<input type="submit" name="" id="" value="提交注册" class="main_btn" />
+				</div>
+				<p class="sub_p">
+					<a href="" class="sub_sub">登录</a>
+					<a href="" class="sub_for">忘记密码</a>
+				</p>
+				<p class="sub_con"><img src="../img/xiala.gif" />注册即代表同意并愿意遵守《
+					<a href="">海淘网用户守则</a>》</p>
+				<div class="sub_meth">
+					<div>
+						<img src="../img/weixin.gif" />
+						<p>微信登录</p>
+					</div>
+					<div>
+						<img src="../img/qq.gif" />
+						<p>QQ登录</p>
+					</div>
+					<div>
+						<img src="../img/weibo.gif" />
+						<p>微博登录</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_con">
+				<ul>
+					<li>
+						<a href="">关于我们</a>
+					</li>
+					<li>
+						<a href="">网站守则</a>
+					</li>
+					<li>
+						<a href="">团购说明</a>
+					</li>
+					<li>
+						<a href="">转运服务</a>
+					</li>
+					<li>
+						<a href="">联系我们</a>
+					</li>
+				</ul>
+				<p>&copy2019 海淘网 沪ICP备14025008号<img src="../img/gongshangicon.gif" alt="" /><img src="../img/beian.png" />网安备31011502002285</p>
+			</div>
+		</div>
+		<script src="../js/lib/jquery.min.js"></script>
+		<script src="../js/zhuce.js"></script>
+	</body>
+
+</html>
